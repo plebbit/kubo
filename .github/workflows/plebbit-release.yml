@@ -1,0 +1,32 @@
+# docs https://github.com/marketplace/actions/create-release
+# docs https://github.com/ncipollo/release-action
+
+name: plebbit-release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      # build kubo
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - uses: actions/setup-go@v3
+        with:
+          go-version: 1.19.1
+      - run: ./plebbit-build.sh
+
+      # publish version release
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: 'dist/*'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          replacesArtifacts: true
+          body: "Fork of https://github.com/ipfs/kubo using custom plebbit pubsub validator https://github.com/plebbit/go-libp2p-pubsub-plebbit-validator"
+          allowUpdates: true
