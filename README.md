@@ -1,3 +1,10 @@
+> [!IMPORTANT]
+> **Plebbit has rebranded to [Bitsocial](https://bitsocial.net).** This repository is archived and preserved for historical reference.
+>
+> This is a historical Plebbit-specific fork. For upstream Kubo, see [ipfs/kubo](https://github.com/ipfs/kubo); for the current Bitsocial pubsub provider, see [bitsocialnet/pubsub-provider](https://github.com/bitsocialnet/pubsub-provider).
+>
+> Find current projects at [@bitsocialnet](https://github.com/bitsocialnet).
+
 
 ![kubo, an IPFS node in Go](https://ipfs.io/ipfs/bafykbzacecaesuqmivkauix25v6i6xxxsvsrtxknhgb5zak3xxsg2nb4dhs2u/ipfs.go.png)
 
